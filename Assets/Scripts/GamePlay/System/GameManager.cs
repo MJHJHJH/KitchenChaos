@@ -53,6 +53,12 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void Return_MainMenu()
+    {
+        StartGame();
+        ChangeGameState(GameState.GameOver);
+    }
+
     private void StartGame()
     {
         Time.timeScale = 1f;
