@@ -42,6 +42,7 @@ public class GameOver : MonoBehaviour
     private void ReturnMainMenu()
     {
         GameManager.Instance.Return_MainMenu();
-        Loader.Load(Loader.SceneType.MainMenu);
+        GameEntry.Event.Fire(ChangeSceneEventArgs.EventId,
+             ChangeSceneEventArgs.Create((int)GameConst.SceneIndexEnum.MenuScene));
     }
 }

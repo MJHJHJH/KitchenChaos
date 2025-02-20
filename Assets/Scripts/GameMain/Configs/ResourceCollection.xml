@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <ResourceCollection>
+    <Resources>
+      <Resource Name="Prefabs" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="Scene" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+    </Resources>
+    <Assets>
+      <Asset Guid="1401ded85b04a52449f5617d81e2eb22" ResourceName="Prefabs" />
+      <Asset Guid="413320832eca65c44b403671b0588474" ResourceName="Prefabs" />
+      <Asset Guid="70f4ef65059878c4c8bb9975e4ffbf5c" ResourceName="Scene" />
+      <Asset Guid="ee4fdf40b2d7af34e97260d9fffae24a" ResourceName="Prefabs" />
+    </Assets>
+  </ResourceCollection>
+</UnityGameFramework>

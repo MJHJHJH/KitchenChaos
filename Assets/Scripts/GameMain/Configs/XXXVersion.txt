@@ -1,0 +1,13 @@
+//放入资源服务器中-XXX为平台名（Windows、MacOS、IOS、Android）注意修改 --！！！放入资源服务器前-请删除这行
+{
+	"ForceUpdateGame": false,
+	"LatestGameVersion": "0.1.0",
+	"InternalGameVersion": 0,
+	"InternalResourceVersion": 2,
+	"UpdatePrefixUri": "http://192.168.2.101/NETVN/Windows/1_0_2/Windows64",
+	"VersionListLength": 46485,
+	"VersionListHashCode": -2051364966,
+	"VersionListZipLength": 14122,
+	"VersionListZipHashCode": 1840962065,
+	"END_OF_JSON": ""
+}

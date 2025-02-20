@@ -21,7 +21,8 @@ public class GamePauseUI : MonoBehaviour
         mainMenuButton.onClick.AddListener(() =>
         {
             GameManager.Instance.Event_PauseAction();
-            Loader.Load(Loader.SceneType.MainMenu);
+            GameEntry.Event.Fire(ChangeSceneEventArgs.EventId,
+             ChangeSceneEventArgs.Create((int)GameConst.SceneIndexEnum.MenuScene));
         });
     }
 
