@@ -1,0 +1,6 @@
+#	资源配置表			
+#	Id		AssetPath	ResourceGroup
+#	int		string	string
+#		策划备注	资源路径	所在资源组
+	10001	主菜单场景	Assets/Scenes/Base/Scenes/MainMenu.unity	Base
+	10002	Level-1	Assets/Scenes/Level1/Scenes/GameMainScene.unity	Level1

@@ -1,0 +1,6 @@
+#	场景配置表			
+#	Id		Name	AssetId
+#	int		string	int
+#		策划备注	物体名字	资源ID名称
+	10001	主菜单场景	MainMenuScene	10001
+	10002	Level-1	GameMainScene	10002

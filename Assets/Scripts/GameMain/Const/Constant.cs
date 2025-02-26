@@ -17,7 +17,7 @@ public static partial class Constant
 
     //默认资源组名
     public static readonly string BaseGroupName = "Base";
-
-    //修改场景时候的变量名
-    public static readonly string ProcedureChangeName = "ProcedureChangeName";
+    //修改场景时候的场景资源ID
+    public static readonly string ProcedureChangeSceneID = "ProcedureChangeSceneID";
+   
 }

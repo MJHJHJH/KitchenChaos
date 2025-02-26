@@ -1,9 +1,12 @@
 using System;
 using System.Diagnostics;
+using GameFramework;
 using GameFramework.Event;
 using GameFramework.Procedure;
+using GameFramework.Resource;
 using UnityEngine.SceneManagement;
 using UnityGameFramework.Runtime;
+using static GameConst;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 //ProcedurePreload -> ProcedureChangeScene
@@ -12,7 +15,7 @@ using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedure
 public class ProcedureChangeScene : ProcedureBase
 {
     bool loadSceneCompleted = false;
-    string nextSceneName;
+    int nextSceneID;
     protected override void OnInit(ProcedureOwner procedureOwner)
     {
         base.OnInit(procedureOwner);
@@ -26,8 +29,8 @@ public class ProcedureChangeScene : ProcedureBase
 
 
         loadSceneCompleted = false;
-        nextSceneName = procedureOwner.GetData<VarString>(Constant.ProcedureChangeName).Value;
-        procedureOwner.RemoveData(Constant.ProcedureChangeName);
+        nextSceneID = procedureOwner.GetData<VarInt32>(Constant.ProcedureChangeSceneID).Value;
+        procedureOwner.RemoveData(Constant.ProcedureChangeSceneID);
         LoadScene();
     }
 
@@ -39,12 +42,11 @@ public class ProcedureChangeScene : ProcedureBase
         {
             return;
         }
-        //TODO:这里先硬编码 - 因为传过来的字符串-后面改成ID后去表里拿 用反射去获得下个状态类切换
-        if (nextSceneName == GameConst.ProcedureMenuName)
+        if (nextSceneID == SceneIDS.MainMenuSceneID)
         {
             ChangeState<ProcedureMenuScene>(procedureOwner);
         }
-        else if (nextSceneName == GameConst.ProcedureGameName)
+        else if (nextSceneID == SceneIDS.Level1SceneID)
         {
             ChangeState<ProcedureGameScene>(procedureOwner);
         }
@@ -62,9 +64,10 @@ public class ProcedureChangeScene : ProcedureBase
         base.OnDestroy(procedureOwner);
     }
 
+    string scenePath;
+    string sceneResourceGroup;
     private void LoadScene()
     {
-        //TODO:用表改变硬编码字符串
         // 卸载所有场景
         string[] loadedSceneAssetNames = GameEntry.Scene.GetLoadedSceneAssetNames();
         for (int i = 0; i < loadedSceneAssetNames.Length; i++)
@@ -72,13 +75,18 @@ public class ProcedureChangeScene : ProcedureBase
             GameEntry.Scene.UnloadScene(loadedSceneAssetNames[i]);
         }
 
-        if (nextSceneName == GameConst.ProcedureMenuName)
+        var drscene = DataHelper.GetDataRowByID<DRScene>(nextSceneID);
+        var drAsset = DataHelper.GetDataRowByID<DRAsset>(drscene.AssetId);
+        scenePath = drAsset.AssetPath;
+        sceneResourceGroup = drAsset.ResourceGroup;
+        //如果是预更新模式，需要判断以下这个场景所在的AB包资源组是否加载了
+        if (GameEntry.Resource.ResourceMode == ResourceMode.Updatable)
         {
-            GameEntry.Scene.LoadScene("Assets/Scenes/MainMenu.unity", Constant.AssetPriority.SceneAsset, this);
+            LoadSceneAsset();
         }
-        else if (nextSceneName == GameConst.ProcedureGameName)
+        else
         {
-            GameEntry.Scene.LoadScene("Assets/Scenes/GameMainScene.unity", Constant.AssetPriority.SceneAsset, this);
+            GameEntry.Scene.LoadScene(scenePath, Constant.AssetPriority.SceneAsset, this);
         }
     }
 
@@ -103,4 +111,32 @@ public class ProcedureChangeScene : ProcedureBase
         Log.Error("Load scene '{0}' failure, error message '{1}'.", ne.SceneAssetName, ne.ErrorMessage);
     }
 
+    //场景资源判断是否加载
+    //判断场景是否加载了，如果没有加载的话要去加载对应的场景
+    private void LoadSceneAsset()
+    {
+        //判断一个资源组是否加载了 - 硬编码+1 需要配表
+        IResourceGroup iResourceGroup = GameEntry.Resource.GetResourceGroup(sceneResourceGroup);
+        if (!iResourceGroup.Ready)
+        {
+            GameEntry.Resource.UpdateResources(sceneResourceGroup, OnUpdateResourcesComplete);
+        }
+        else
+        {
+            GameEntry.Scene.LoadScene(scenePath, Constant.AssetPriority.SceneAsset, this);
+        }
+    }
+
+    private void OnUpdateResourcesComplete(IResourceGroup resourceGroup, bool result)
+    {
+        if (result)
+        {
+            Log.Info($"场景：{scenePath} 所在资源组 {resourceGroup.Name} 加载成功");
+            GameEntry.Scene.LoadScene(scenePath, Constant.AssetPriority.SceneAsset, this);
+        }
+        else
+        {
+            Log.Info($"场景：{scenePath} 所在资源组 {resourceGroup.Name} 加载失败");
+        }
+    }
 }

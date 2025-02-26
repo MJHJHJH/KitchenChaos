@@ -266,75 +266,75 @@ namespace UnityGameFramework.Editor
             }
             EditorGUI.EndDisabledGroup();
 
-            if (EditorApplication.isPlaying && IsPrefabInHierarchy(t.gameObject))
-            {
-                EditorGUILayout.LabelField("Unload Unused Assets", Utility.Text.Format("{0} / {1}", t.LastUnloadUnusedAssetsOperationElapseSeconds.ToString("F2"), t.MaxUnloadUnusedAssetsInterval.ToString("F2")));
-                EditorGUILayout.LabelField("Read-Only Path", t.ReadOnlyPath.ToString());
-                EditorGUILayout.LabelField("Read-Write Path", t.ReadWritePath.ToString());
-                EditorGUILayout.LabelField("Current Variant", t.CurrentVariant ?? "<Unknwon>");
-                EditorGUILayout.LabelField("Applicable Game Version", isEditorResourceMode ? "N/A" : t.ApplicableGameVersion ?? "<Unknwon>");
-                EditorGUILayout.LabelField("Internal Resource Version", isEditorResourceMode ? "N/A" : t.InternalResourceVersion.ToString());
-                EditorGUILayout.LabelField("Asset Count", isEditorResourceMode ? "N/A" : t.AssetCount.ToString());
-                EditorGUILayout.LabelField("Resource Count", isEditorResourceMode ? "N/A" : t.ResourceCount.ToString());
-                EditorGUILayout.LabelField("Resource Group Count", isEditorResourceMode ? "N/A" : t.ResourceGroupCount.ToString());
-                if (m_ResourceModeIndex > 0)
-                {
-                    EditorGUILayout.LabelField("Applying Resource Pack Path", isEditorResourceMode ? "N/A" : t.ApplyingResourcePackPath ?? "<Unknwon>");
-                    EditorGUILayout.LabelField("Apply Waiting Count", isEditorResourceMode ? "N/A" : t.ApplyWaitingCount.ToString());
-                    EditorGUILayout.LabelField("Updating Resource Group", isEditorResourceMode ? "N/A" : t.UpdatingResourceGroup != null ? t.UpdatingResourceGroup.Name : "<Unknwon>");
-                    EditorGUILayout.LabelField("Update Waiting Count", isEditorResourceMode ? "N/A" : t.UpdateWaitingCount.ToString());
-                    EditorGUILayout.LabelField("Update Waiting While Playing Count", isEditorResourceMode ? "N/A" : t.UpdateWaitingWhilePlayingCount.ToString());
-                    EditorGUILayout.LabelField("Update Candidate Count", isEditorResourceMode ? "N/A" : t.UpdateCandidateCount.ToString());
-                }
-                EditorGUILayout.LabelField("Load Total Agent Count", isEditorResourceMode ? "N/A" : t.LoadTotalAgentCount.ToString());
-                EditorGUILayout.LabelField("Load Free Agent Count", isEditorResourceMode ? "N/A" : t.LoadFreeAgentCount.ToString());
-                EditorGUILayout.LabelField("Load Working Agent Count", isEditorResourceMode ? "N/A" : t.LoadWorkingAgentCount.ToString());
-                EditorGUILayout.LabelField("Load Waiting Task Count", isEditorResourceMode ? "N/A" : t.LoadWaitingTaskCount.ToString());
-                if (!isEditorResourceMode)
-                {
-                    EditorGUILayout.BeginVertical("box");
-                    {
-                        TaskInfo[] loadAssetInfos = t.GetAllLoadAssetInfos();
-                        if (loadAssetInfos.Length > 0)
-                        {
-                            foreach (TaskInfo loadAssetInfo in loadAssetInfos)
-                            {
-                                DrawLoadAssetInfo(loadAssetInfo);
-                            }
+            // if (EditorApplication.isPlaying && IsPrefabInHierarchy(t.gameObject))
+            // {
+            //     EditorGUILayout.LabelField("Unload Unused Assets", Utility.Text.Format("{0} / {1}", t.LastUnloadUnusedAssetsOperationElapseSeconds.ToString("F2"), t.MaxUnloadUnusedAssetsInterval.ToString("F2")));
+            //     EditorGUILayout.LabelField("Read-Only Path", t.ReadOnlyPath.ToString());
+            //     EditorGUILayout.LabelField("Read-Write Path", t.ReadWritePath.ToString());
+            //     EditorGUILayout.LabelField("Current Variant", t.CurrentVariant ?? "<Unknwon>");
+            //     EditorGUILayout.LabelField("Applicable Game Version", isEditorResourceMode ? "N/A" : t.ApplicableGameVersion ?? "<Unknwon>");
+            //     EditorGUILayout.LabelField("Internal Resource Version", isEditorResourceMode ? "N/A" : t.InternalResourceVersion.ToString());
+            //     EditorGUILayout.LabelField("Asset Count", isEditorResourceMode ? "N/A" : t.AssetCount.ToString());
+            //     EditorGUILayout.LabelField("Resource Count", isEditorResourceMode ? "N/A" : t.ResourceCount.ToString());
+            //     EditorGUILayout.LabelField("Resource Group Count", isEditorResourceMode ? "N/A" : t.ResourceGroupCount.ToString());
+            //     if (m_ResourceModeIndex > 0)
+            //     {
+            //         EditorGUILayout.LabelField("Applying Resource Pack Path", isEditorResourceMode ? "N/A" : t.ApplyingResourcePackPath ?? "<Unknwon>");
+            //         EditorGUILayout.LabelField("Apply Waiting Count", isEditorResourceMode ? "N/A" : t.ApplyWaitingCount.ToString());
+            //         EditorGUILayout.LabelField("Updating Resource Group", isEditorResourceMode ? "N/A" : t.UpdatingResourceGroup != null ? t.UpdatingResourceGroup.Name : "<Unknwon>");
+            //         EditorGUILayout.LabelField("Update Waiting Count", isEditorResourceMode ? "N/A" : t.UpdateWaitingCount.ToString());
+            //         EditorGUILayout.LabelField("Update Waiting While Playing Count", isEditorResourceMode ? "N/A" : t.UpdateWaitingWhilePlayingCount.ToString());
+            //         EditorGUILayout.LabelField("Update Candidate Count", isEditorResourceMode ? "N/A" : t.UpdateCandidateCount.ToString());
+            //     }
+            //     EditorGUILayout.LabelField("Load Total Agent Count", isEditorResourceMode ? "N/A" : t.LoadTotalAgentCount.ToString());
+            //     EditorGUILayout.LabelField("Load Free Agent Count", isEditorResourceMode ? "N/A" : t.LoadFreeAgentCount.ToString());
+            //     EditorGUILayout.LabelField("Load Working Agent Count", isEditorResourceMode ? "N/A" : t.LoadWorkingAgentCount.ToString());
+            //     EditorGUILayout.LabelField("Load Waiting Task Count", isEditorResourceMode ? "N/A" : t.LoadWaitingTaskCount.ToString());
+            //     if (!isEditorResourceMode)
+            //     {
+            //         EditorGUILayout.BeginVertical("box");
+            //         {
+            //             TaskInfo[] loadAssetInfos = t.GetAllLoadAssetInfos();
+            //             if (loadAssetInfos.Length > 0)
+            //             {
+            //                 foreach (TaskInfo loadAssetInfo in loadAssetInfos)
+            //                 {
+            //                     DrawLoadAssetInfo(loadAssetInfo);
+            //                 }
 
-                            if (GUILayout.Button("Export CSV Data"))
-                            {
-                                string exportFileName = EditorUtility.SaveFilePanel("Export CSV Data", string.Empty, "Load Asset Task Data.csv", string.Empty);
-                                if (!string.IsNullOrEmpty(exportFileName))
-                                {
-                                    try
-                                    {
-                                        int index = 0;
-                                        string[] data = new string[loadAssetInfos.Length + 1];
-                                        data[index++] = "Load Asset Name,Serial Id,Priority,Status";
-                                        foreach (TaskInfo loadAssetInfo in loadAssetInfos)
-                                        {
-                                            data[index++] = Utility.Text.Format("{0},{1},{2},{3}", loadAssetInfo.Description, loadAssetInfo.SerialId.ToString(), loadAssetInfo.Priority.ToString(), loadAssetInfo.Status.ToString());
-                                        }
+            //                 if (GUILayout.Button("Export CSV Data"))
+            //                 {
+            //                     string exportFileName = EditorUtility.SaveFilePanel("Export CSV Data", string.Empty, "Load Asset Task Data.csv", string.Empty);
+            //                     if (!string.IsNullOrEmpty(exportFileName))
+            //                     {
+            //                         try
+            //                         {
+            //                             int index = 0;
+            //                             string[] data = new string[loadAssetInfos.Length + 1];
+            //                             data[index++] = "Load Asset Name,Serial Id,Priority,Status";
+            //                             foreach (TaskInfo loadAssetInfo in loadAssetInfos)
+            //                             {
+            //                                 data[index++] = Utility.Text.Format("{0},{1},{2},{3}", loadAssetInfo.Description, loadAssetInfo.SerialId.ToString(), loadAssetInfo.Priority.ToString(), loadAssetInfo.Status.ToString());
+            //                             }
 
-                                        File.WriteAllLines(exportFileName, data, Encoding.UTF8);
-                                        Debug.Log(Utility.Text.Format("Export load asset task CSV data to '{0}' success.", exportFileName));
-                                    }
-                                    catch (Exception exception)
-                                    {
-                                        Debug.LogError(Utility.Text.Format("Export load asset task CSV data to '{0}' failure, exception is '{1}'.", exportFileName, exception.ToString()));
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            GUILayout.Label("Load Asset Task is Empty ...");
-                        }
-                    }
-                    EditorGUILayout.EndVertical();
-                }
-            }
+            //                             File.WriteAllLines(exportFileName, data, Encoding.UTF8);
+            //                             Debug.Log(Utility.Text.Format("Export load asset task CSV data to '{0}' success.", exportFileName));
+            //                         }
+            //                         catch (Exception exception)
+            //                         {
+            //                             Debug.LogError(Utility.Text.Format("Export load asset task CSV data to '{0}' failure, exception is '{1}'.", exportFileName, exception.ToString()));
+            //                         }
+            //                     }
+            //                 }
+            //             }
+            //             else
+            //             {
+            //                 GUILayout.Label("Load Asset Task is Empty ...");
+            //             }
+            //         }
+            //         EditorGUILayout.EndVertical();
+            //     }
+            // }
 
             serializedObject.ApplyModifiedProperties();
 

@@ -22,7 +22,7 @@ public class GamePauseUI : MonoBehaviour
         {
             GameManager.Instance.Event_PauseAction();
             GameEntry.Event.Fire(ChangeSceneEventArgs.EventId,
-             ChangeSceneEventArgs.Create((int)GameConst.SceneIndexEnum.MenuScene));
+             ChangeSceneEventArgs.Create(GameConst.SceneIDS.MainMenuSceneID));
         });
     }
 

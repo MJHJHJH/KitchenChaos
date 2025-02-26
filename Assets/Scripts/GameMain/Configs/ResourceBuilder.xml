@@ -2,7 +2,7 @@
 <UnityGameFramework>
   <ResourceBuilder>
     <Settings>
-      <InternalResourceVersion>3</InternalResourceVersion>
+      <InternalResourceVersion>6</InternalResourceVersion>
       <Platforms>2</Platforms>
       <AssetBundleCompression>1</AssetBundleCompression>
       <CompressionHelperTypeName>UnityGameFramework.Runtime.DefaultCompressionHelper</CompressionHelperTypeName>
@@ -10,7 +10,7 @@
       <ForceRebuildAssetBundleSelected>False</ForceRebuildAssetBundleSelected>
       <BuildEventHandlerTypeName>
       </BuildEventHandlerTypeName>
-      <OutputDirectory>E:\Unity\ProjectGroup\GameFramework\AssetBudles</OutputDirectory>
+      <OutputDirectory>E:\UnityDesktop\KitchenChaos</OutputDirectory>
       <OutputPackageSelected>True</OutputPackageSelected>
       <OutputFullSelected>True</OutputFullSelected>
       <OutputPackedSelected>True</OutputPackedSelected>

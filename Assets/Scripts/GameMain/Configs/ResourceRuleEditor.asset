@@ -14,22 +14,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rules:
   - valid: 1
-    name: Prefabs
+    name: BaseScene
     variant: 
     fileSystem: Base
     groups: Base
-    assetsDirectoryPath: Assets/GameMain/Prefabs
+    assetsDirectoryPath: Assets/Scenes/Base
     loadType: 0
     packed: 0
     filterType: 0
     searchPatterns: '*.*'
   - valid: 1
-    name: Scene
+    name: BaseAssets
     variant: 
     fileSystem: Base
     groups: Base
-    assetsDirectoryPath: Assets/GameMain/Scenes
+    assetsDirectoryPath: Assets/_Assets/Base
+    loadType: 0
+    packed: 0
+    filterType: 2
+    searchPatterns: '*.*'
+  - valid: 1
+    name: DataTable
+    variant: 
+    fileSystem: Base
+    groups: Base
+    assetsDirectoryPath: Assets/Data/DataTables_Bytes
     loadType: 0
     packed: 0
     filterType: 0
+    searchPatterns: '*.*'
+  - valid: 1
+    name: Level1Scene
+    variant: 
+    fileSystem: Resources
+    groups: Level1
+    assetsDirectoryPath: Assets/Scenes/Level1
+    loadType: 0
+    packed: 0
+    filterType: 0
+    searchPatterns: '*.*'
+  - valid: 1
+    name: Level1Assets
+    variant: 
+    fileSystem: Resources
+    groups: Level1
+    assetsDirectoryPath: Assets/_Assets/Level1
+    loadType: 0
+    packed: 0
+    filterType: 2
     searchPatterns: '*.*'

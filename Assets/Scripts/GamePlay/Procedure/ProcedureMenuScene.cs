@@ -2,8 +2,10 @@ using System;
 using System.Diagnostics;
 using GameFramework.Event;
 using GameFramework.Procedure;
+using GameFramework.Resource;
 using UnityEngine.SceneManagement;
 using UnityGameFramework.Runtime;
+using static GameConst;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 public class ProcedureMenuScene : ProcedureBase
@@ -53,10 +55,9 @@ public class ProcedureMenuScene : ProcedureBase
         {
             return;
         }
-        //TODO:这里也是硬编码 - 后续改成 ne中的表id去获取
-        procedureOwner.SetData<VarString>(Constant.ProcedureChangeName, GameConst.ProcedureGameName);
+        procedureOwner.SetData<VarInt32>(Constant.ProcedureChangeSceneID, ne.SceneId);
         isChangeScene = true;
     }
 
-
+   
 }

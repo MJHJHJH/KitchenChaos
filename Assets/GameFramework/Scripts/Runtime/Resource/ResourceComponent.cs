@@ -106,7 +106,11 @@ namespace UnityGameFramework.Runtime
         {
             get
             {
-                return m_ResourceManager.ReadOnlyPath;
+                if (m_ResourceManager != null)
+                {
+                    return m_ResourceManager.ReadOnlyPath;
+                }
+                return "None";
             }
         }
 
@@ -117,7 +121,11 @@ namespace UnityGameFramework.Runtime
         {
             get
             {
-                return m_ResourceManager.ReadWritePath;
+                if (m_ResourceManager != null)
+                {
+                    return m_ResourceManager.ReadWritePath;
+                }
+                return "None";
             }
         }
 
@@ -128,7 +136,11 @@ namespace UnityGameFramework.Runtime
         {
             get
             {
-                return m_ResourceManager.ResourceMode;
+                if (m_ResourceManager != null)
+                {
+                    return m_ResourceManager.ResourceMode;
+                }
+                return ResourceMode.Updatable;
             }
         }
 
@@ -150,7 +162,12 @@ namespace UnityGameFramework.Runtime
         {
             get
             {
-                return m_ResourceManager.CurrentVariant;
+                if (m_ResourceManager != null)
+                {
+                    return m_ResourceManager.CurrentVariant;
+                }
+                return null;
+
             }
         }
 

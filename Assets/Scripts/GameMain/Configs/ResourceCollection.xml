@@ -2,14 +2,225 @@
 <UnityGameFramework>
   <ResourceCollection>
     <Resources>
-      <Resource Name="Prefabs" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
-      <Resource Name="Scene" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Base/Animations" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Base/Materials" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Base/PrefabsVisuals" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Base/ScriptObjects" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Base/Sounds" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Base/Textures" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="_Assets/Level1/ClearCounter" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="_Assets/Level1/KitchenObjects" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="_Assets/Level1/Materials" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="_Assets/Level1/Meshes" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="_Assets/Level1/ScriptObjects" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="_Assets/Level1/Shaders" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="_Assets/Level1/Textures" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
+      <Resource Name="BaseScene" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="DataTable" FileSystem="Base" LoadType="0" Packed="False" ResourceGroups="Base" />
+      <Resource Name="Level1Scene" FileSystem="Resources" LoadType="0" Packed="False" ResourceGroups="Level1" />
     </Resources>
     <Assets>
-      <Asset Guid="1401ded85b04a52449f5617d81e2eb22" ResourceName="Prefabs" />
-      <Asset Guid="413320832eca65c44b403671b0588474" ResourceName="Prefabs" />
-      <Asset Guid="70f4ef65059878c4c8bb9975e4ffbf5c" ResourceName="Scene" />
-      <Asset Guid="ee4fdf40b2d7af34e97260d9fffae24a" ResourceName="Prefabs" />
+      <Asset Guid="0004cb1e11ad014419b943c7da960724" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="01e6e32335b88f244a146af71bb8d6ea" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="0262374d247d2b240b5fbd189343a576" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="027cbaefe8f550541ab40d6e2e6a2438" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="02a24f0f7eb1b624ab903663ee9a248c" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="030c5fdf1aa04eb46b9fb96d2155eb3e" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="0486262dd5a5240428ab7ef1658c19b3" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="05997a0965fc0c54485216ff28b18ac7" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="06000808535e0a649a9f768809d75028" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="078e15982fce2e147bf06c8a7682f28b" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="0aa5d8c65f86e0d47b58bf1717e1b91f" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="0bbeb37999e68ed4c8135560b6790f5c" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="0d6e1281049dccc4189bf308b2ccf331" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="0df961a7e3870b44f9bbce7bdf930613" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="109831050e4717746a643c3caee1b864" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="10e39c981f2de6441b54efde32ced8f0" ResourceName="_Assets/Base/PrefabsVisuals" />
+      <Asset Guid="114b0da55051c094b90c77403aff838e" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="12d9bf5aa92c13841abb9eec36b81afd" ResourceName="_Assets/Base/PrefabsVisuals" />
+      <Asset Guid="1490c1a2a58371d4b9cc957fc7b17d59" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="159fdf44081dc31468b5d2cf94ed008e" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="173bc1e7f12da6e4abd7e28adb57f781" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="17cb28a1a37fd7f44ae6e1ad2aa9da78" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="1a0afd856a35421469b28b916116fd9c" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="1b16139ed66f52f41b98c4273bf2806d" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="1ba85bfeead668d408d59b5a3f9fb434" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="1c5dda3c7cd3cf742afcade5419faeab" ResourceName="_Assets/Base/PrefabsVisuals" />
+      <Asset Guid="1d96d21b2ed0ae2418c4e9c6fbdb9092" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="1d9b9f03f848d714abb6b7ff43d4531b" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="1f9a8907445f5914790a98b1ac223020" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="21b2fcdae015b8c4c83ff4b68b31b06f" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="236b5b00208eca24aa94bf96571ab56e" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="240cb0343f51a264eaa7795cefe2dd94" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="256b17f65ca4560449866be321c6b6b2" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="259702638197d9246bfc6f2b0fe88c09" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="2b01c717e11ae56408108b24f1b2307f" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="31763c6ff5879c441bb1a7335c37ef79" ResourceName="DataTable" />
+      <Asset Guid="32d29abc86751884081d2005f9ff2676" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="331b82ab2c0e2b74d805124d11372c85" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="353eec077b4390b43aab98adeac15a1e" ResourceName="_Assets/Base/Materials" />
+      <Asset Guid="36694ad9cc3abc04ab48fdb0373f2037" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="3928afb5321bb3d489bbd4ac581b29a2" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="3a183ec11ac46404eb82c3a876a74a61" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="3bfb3e55e3e40134d937bed6d2d61c28" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="400611abd7434234993616a86c030d1e" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="44325c67017631342b5f02792113e57b" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="444dea93957430645be101a7d66ef8d8" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="44b7e90f95929c04c8394768d8bd1d14" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="456aff8d8c93b494d9387cd32bd0346d" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="47962f70fa46e4b43b546811822ffcdc" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="47f1f81f2deb8f84a8b54892c1a55533" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="4a2ed721b7506a743bde7e52fafb3aff" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="4b22bfbdbacfa0445bc9bbfbb0141085" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="4b70ec0f0afb9ac4ea7dfea07aca4eb4" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="4d5fcfb1fb5112e40acd515745990069" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="4dde307d9c0642143babe4ca75d234e8" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="4ff21eb4b9a941047a01ef2e6aea0a36" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="50205ffe58351d244bbcbd725dbfa802" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="511c1cbfb8b48b64083aec78fe17115f" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="52971cd5568d3da44a2b9038404e1573" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="549cb4f2b86d1b84d8cd41c1cfde26c8" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="5582b46553589fe468e9af037eda8133" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="5616eeb605d93c941881dea4513487e0" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="564e3bbea02f84743a13282b22895d01" ResourceName="_Assets/Level1/Shaders" />
+      <Asset Guid="57412f4e860016d468a0a27511c8c8ae" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="5761fb2e7ca57094cb8dfe8ca985c95e" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="578170ab328d7f04f91150467ce621a5" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="598a91cf1806eae49abf8273f6ad8ffa" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="5ab04d90f9e9cd646a3bd2193331a761" ResourceName="_Assets/Base/Materials" />
+      <Asset Guid="5acc2624073767344a12e1790a97c8b3" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="5b3a386d8b1ad7a4ba6140bdf9587085" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="5b6d675e83b874744bd9164efa49b068" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="5cd9c4cb641f84d44a3f09754979864b" ResourceName="_Assets/Base/Materials" />
+      <Asset Guid="5cef870fc734b2147b112552f3ff53e4" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="5e0602b8ff2f0e142b2df6b64bb7e24d" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="5e86c52b28e46f84faa7ceb0e9608196" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="6024ba1d53d005f48a96b3a9f6bacedd" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="63535043df9b0cf4483da0f179e4e423" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="641c97aa3fe3c2f4b942b1b919b8cafe" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="64a04bb4fa4ed5d4eac6b0a31f91843a" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="6669fbad546a986469892e893704df06" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="668de61a04ca5914aa745f8712c62720" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="66dd0dbebcf72b643a4c9b16d06000b6" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="6706f61472a099542b1b418471acf442" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="6728bf8b07482414e99ba965fdd022d8" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="6820e50a72696664cb1a9b5484ecee33" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="686436e1b17e56340a28f218c36b9d68" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="697ab8b7404c9dd42b2b7bbc0f8f592e" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="6a936576e1e30a640844535c71d5a149" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="6b16391e5ac832240adf9689e25e37c1" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="6c562ac6d3e47ff4794df31886c6d864" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="6d03a7ab5d5081f47bd97f024c79b4a7" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="6de09f51c1b3c7e468771e1f6d1fb7f2" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="70960c9850b4e1f49a624468a3148b8e" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="713ea9afa60dd6e4ebf6503a33e8cc99" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="73593f60d3401e24bbbe5fe0ee833d75" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="75b0c5b412fce514db07f0a97f4a0b2f" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="776cc3ef592a836479bea3edeefd0106" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="77b28124b8bda494381c80bd5aa42c22" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="78ff38fdc6a64dd479a2d502fb2b1315" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="7a05dfef8ff133848b3b25408c74021c" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="7e9192aa6090c834589ba44fb1d962a7" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="7eb63741781409844a3767795957ed58" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="81610f86846f7834c8c1e67f32b8092a" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="81c9c80f5d7d6e1408e7563a340b135f" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="81e9fe7b3cd084242a088e945f531f38" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="86c2ea7f1e3cbe4428182938982a3261" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="874e968446c933942a2e13d2e840aa73" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="87763d49f84b8484a937c64afab69a17" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="8e51262abb6b5fa4288bd453b7cfb7a6" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="90f0eed1477afe14b9e538e5bfa88cdc" ResourceName="_Assets/Base/Materials" />
+      <Asset Guid="91e8fe3de9249fc44b7bdd8050062896" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="93af8b85a17635f40a5b76ed82a86c18" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="9445b38d789e798418c73651d7f0f111" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="94e41f7dc0eec0a4bb0191ceaf0856ef" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="950ec8dfe175e3e4ca934b3b0cda6173" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="961379cce253f794abff0d24df806b68" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="9700db998cae22d468dd4d078a246e2b" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="9922224e75dd4e34ab4e113f2cf7cdb8" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="99c666127ba3b974c99980d14efcf03c" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="99c9720ab356a0642a771bea13969a05" ResourceName="Level1Scene" />
+      <Asset Guid="9a9137fa2b035d34e881701d2c178192" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="9bbadee298e0b5246a4afee61ccbc0fc" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="9c3897bb6abcfda4a9ce0216bb225a24" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="9c6157275e190604d8136e7e497e941e" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="9c88983fa5906dc41944ec5a43b6b5c7" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="9ffc1eae34d173b4081290c908723acc" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="a25dd164e583fe249a15953d6a28433b" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="a3b9ddc7f1f48ed4eab456d2b3288611" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="a49f323ac322a2d478a4ac4b136f89a7" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="a4a30a507a1311a438ecf1507369b28d" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="a644e8885b470a642b1f392d12aece47" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="a69528576c7ad554eaca1e842f426625" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="a9a9eece5c598344e809d0616c9e285c" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="aa1bacc24dde76e47b2ec0dd4e82385b" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="af014c1f44781f6438ddefb983ee8899" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="b1615ce595237c844a90fe061af63f75" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="b2d2893ac04fbdb44a226f4b6ea0d271" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="b59c98e0066c41f42b8100f5cb180f5b" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="b8cc4dd19d8249647b0e42fce4fe9674" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="b901b505331d56844a86abb991c9f56d" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="b90d8099bdbf09a40ab1163556d5b5f4" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="ba1feae5ea5e30c43aed4f0e20b0db1f" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="bc49891f572f1164e9938f845ec37ab0" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="be1e77e8d4e81bf4292e5b46dc090583" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="bee24f07c57157e45a946eed3bfe8b84" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="c044efb604a1c2d4ab08cedf8f93efbd" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="c0c368d5e35a05244a16cc67c9bb9fd3" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="c0c9afd619b40914a8f625c0535e2284" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="c35dbcfcc50b6c946b2336292dd609c7" ResourceName="DataTable" />
+      <Asset Guid="c4e141bc61e807b4b832b850d92f5fd7" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="c5152b40349b5d34fbf8d77be1c66445" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="c52b5adee76432c438454b345271ad48" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="c6ab874a4b6ade44ebeaa67b5ecf08a2" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="c78259c28adc42140b5e2e8419c882be" ResourceName="_Assets/Level1/Materials" />
+      <Asset Guid="c9f08c3c1ae2a364aaeaa3712540b1d4" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="cbcadbe2bb4065f43b21cd27b993f795" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="cbe22515446063f4280af1c3af967c88" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="cc97c340134faa948bcaf20fea6429c6" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="ce06bbde7c4eab34bb593f0b83cc99ab" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="cedc458404734c04b87356e63f64b9b3" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="cf5f89160b95a414ba3b4a5caf13ca42" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="d19bdd1a864392741a73a4c100365870" ResourceName="BaseScene" />
+      <Asset Guid="d3276783f87737c40af5623adad447ec" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="d533169375f09d644a36f56c34d79a7a" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="d72bee846803d074784ffb8f64e993ca" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="d7d4fe9f378d5c843a6b259589031ef6" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="d7dc3ae032292ec4790e41ed41f65f1d" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="d87dfd3351d974345a720c6f6cefbd37" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="d91480ef56841f842b2db30c8881ef89" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="d9d9d618deabc7e4bafb804ecea21df2" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="da2d04fe27b94e34ea0b624569b48a6f" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="da32d18f77866bf47945f10fe354f359" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="dba792b574c201a4eabfe983aa82805a" ResourceName="_Assets/Base/Materials" />
+      <Asset Guid="dd03badf8f9b42647994af8e1145ccb0" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="ddeee0face48cd346be478cda5ba7071" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="e010f1f86d72c9748a2f393639aa2c78" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="e160d0b3041886545b48b048b01c9f60" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="e1c23b5aded59d84da30738d3267a6c9" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="e21b499d164095947b7559f0267f0e63" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="e3d496c6436b0cf4a8eef3d8865e8639" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="e519f586b4ac0904e877dfab85ed729e" ResourceName="_Assets/Base/Sounds" />
+      <Asset Guid="e59aa20c823d9d641b8fd3ada4d1f6cb" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="e78ad2425a86ac04b87b998fc695179a" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="e879ff1414d1dd64c9ad7b04bffdfaef" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="e8b1607e0df77b643a9e90b8036cca0d" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="ea8d8015153ce064cbdaa9932bf81a04" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="ead4e305e7c244b418af43ccfd3c5aac" ResourceName="_Assets/Base/Materials" />
+      <Asset Guid="eb2eec5d81be49b4b95cf99cf6e91f48" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="ec0a48d8590f49542b03ef1d9478bef0" ResourceName="_Assets/Base/ScriptObjects" />
+      <Asset Guid="ee0b22d7af9cf764e9358c2fbe1f08e1" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="f0017d5642ccf89439e1c738c37b1c2b" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="f14a35022b9f6624e8b72527673be442" ResourceName="_Assets/Level1/ClearCounter" />
+      <Asset Guid="f18900e22c39de34184357b4a90ff275" ResourceName="_Assets/Base/Textures" />
+      <Asset Guid="f1f50c7ef90b19741b26f2040806cf56" ResourceName="_Assets/Level1/Textures" />
+      <Asset Guid="f3fa17fb756b77541b018fb21d7275c9" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="f46454cbed06c8e4f8a0203bb4cd40ee" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="f8c1f20930651254f9dad32e4686d44d" ResourceName="_Assets/Base/Animations" />
+      <Asset Guid="f96cca859fe799d43923f70ada4a098a" ResourceName="_Assets/Level1/ScriptObjects" />
+      <Asset Guid="fb403d1efda6baf4190c507841617408" ResourceName="_Assets/Level1/KitchenObjects" />
+      <Asset Guid="fda69cb5afbf51f449a4b1692fbb2535" ResourceName="_Assets/Level1/Meshes" />
+      <Asset Guid="ff381eada267a4548b664f76347d90a4" ResourceName="_Assets/Level1/ScriptObjects" />
     </Assets>
   </ResourceCollection>
 </UnityGameFramework>

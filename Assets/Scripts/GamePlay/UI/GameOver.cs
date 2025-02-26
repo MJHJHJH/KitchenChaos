@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameConst;
 
 public class GameOver : MonoBehaviour
 {
@@ -43,6 +44,6 @@ public class GameOver : MonoBehaviour
     {
         GameManager.Instance.Return_MainMenu();
         GameEntry.Event.Fire(ChangeSceneEventArgs.EventId,
-             ChangeSceneEventArgs.Create((int)GameConst.SceneIndexEnum.MenuScene));
+             ChangeSceneEventArgs.Create(SceneIDS.MainMenuSceneID));
     }
 }

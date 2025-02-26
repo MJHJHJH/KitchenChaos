@@ -1,7 +1,10 @@
+using GameFramework;
+using GameFramework.Event;
 using GameFramework.Procedure;
 using GameFramework.Resource;
 using UnityEngine;
 using UnityGameFramework.Runtime;
+using static GameConst;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 //ProcedureSplash ->ProcedurePreload
@@ -18,11 +21,14 @@ public class ProcedurePreload : ProcedureBase
 
     protected override void OnEnter(ProcedureOwner procedureOwner)
     {
+        isPreloadComplete = false;
         //设置场景相关变量
-        procedureOwner.SetData<VarString>(Constant.ProcedureChangeName, GameConst.ProcedureMenuName);
-        //todo：目前没有太多相关流程
-        isPreloadComplete = true;
+        procedureOwner.SetData<VarInt32>(Constant.ProcedureChangeSceneID, SceneIDS.MainMenuSceneID);
+        GameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
+        GameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+        LoadAllTableData();
         base.OnEnter(procedureOwner);
+
     }
 
     protected override void OnUpdate(ProcedureOwner procedureOwner,
@@ -38,6 +44,8 @@ public class ProcedurePreload : ProcedureBase
 
     protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
     {
+        GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
+        GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
         base.OnLeave(procedureOwner, isShutdown);
     }
 
@@ -45,4 +53,47 @@ public class ProcedurePreload : ProcedureBase
     {
         base.OnDestroy(procedureOwner);
     }
+
+    //加载所有的配置表数据
+    private int AlreadyLoadDataTableNum = 0;
+    private void LoadAllTableData()
+    {
+        // 订阅加载数据表相关的事件
+        foreach (string dataTableName in DataTableAllName.Instance.allNameList)
+        {
+            string dataTableAssetName = DataTablePathHelp.GetDataTableAsset(dataTableName);
+            GameEntry.DataTable.LoadDataTable(dataTableName, dataTableAssetName, this);
+        }
+    }
+
+    private void OnLoadDataTableSuccess(object sender, GameEventArgs e)
+    {
+        AlreadyLoadDataTableNum += 1;
+        LoadDataTableSuccessEventArgs ne = (LoadDataTableSuccessEventArgs)e;
+        if (ne.UserData != this)
+        {
+            return;
+        }
+        //尝试打印数据表数据 
+        if (AlreadyLoadDataTableNum == DataTableAllName.Instance.allNameList.Count)
+        {
+            isPreloadComplete = true;
+        }
+    }
+
+    private void OnLoadDataTableFailure(object sender, GameEventArgs e)
+    {
+        AlreadyLoadDataTableNum += 1;
+        LoadDataTableFailureEventArgs ne = (LoadDataTableFailureEventArgs)e;
+        if (ne.UserData != this)
+        {
+            return;
+        }
+        Log.Info($"{ne.DataTableAssetName} - Load Fail");
+        if (AlreadyLoadDataTableNum == DataTableAllName.Instance.allNameList.Count)
+        {
+            isPreloadComplete = true;
+        }
+    }
+
 }
