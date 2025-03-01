@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameFramework.Event;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityGameFramework.Runtime;
+
 
 public class GameManager : Singleton<GameManager>
 {
@@ -13,6 +15,7 @@ public class GameManager : Singleton<GameManager>
         Pause,
         GamePlaying,
         GameOver,
+        Exit,
     }
 
     public event Action<GameState> OnStateChanged = null;
@@ -26,15 +29,29 @@ public class GameManager : Singleton<GameManager>
     private float gamePlayingTimer = 10f;
     private float gamePlayingTimerMax = 10f;
 
+    private int WaitClockUISerialId;
     // Start is called before the first frame update
     void Start()
     {
-        ChangeGameState(GameState.WaitingToStart);
-        PlayerInputManager.Instance.Event_Pause += Event_PauseAction;
+        GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, WaitClockUIOpenSuccess);
+        //打开固定UI
+        WaitClockUISerialId = UIHelper.OpenUIFormByDataID(GameConst.UIFormID.WaitClockUI);
+    }
+
+    private void WaitClockUIOpenSuccess(object sender, GameEventArgs e)
+    {
+        OpenUIFormSuccessEventArgs ne = (OpenUIFormSuccessEventArgs)e;
+        if (ne.UIForm.SerialId == WaitClockUISerialId)
+        {
+            Log.Info("WaitClockUIOpenSuccess");
+            ChangeGameState(GameState.WaitingToStart);
+            PlayerInputManager.Instance.Event_Pause += Event_PauseAction;
+        }
     }
 
     protected override void OnDestroy()
     {
+        GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, WaitClockUIOpenSuccess);
         PlayerInputManager.Instance.Event_Pause -= Event_PauseAction;
         base.OnDestroy();
     }
@@ -56,8 +73,9 @@ public class GameManager : Singleton<GameManager>
     public void Return_MainMenu()
     {
         StartGame();
-        ChangeGameState(GameState.GameOver);
+        ChangeGameState(GameState.Exit);
     }
+
 
     private void StartGame()
     {
@@ -107,7 +125,9 @@ public class GameManager : Singleton<GameManager>
     {
         lastState = gameState;
         gameState = _gameState;
+        OpenUIByGameState(_gameState);
         OnStateChanged?.Invoke(gameState);
+
     }
 
     public GameState GetCurrentGameState()
@@ -123,5 +143,22 @@ public class GameManager : Singleton<GameManager>
     public float GetGamePlayingTimerRatio()
     {
         return (gamePlayingTimerMax - gamePlayingTimer) / gamePlayingTimerMax;
+    }
+
+    public void OpenUIByGameState(GameState _gameState)
+    {
+        switch (_gameState)
+        {
+            case GameState.GamePlaying:
+                UIHelper.OpenUIFormByDataID(GameConst.UIFormID.DeliveryManagerUIID);
+                UIHelper.OpenUIFormByDataID(GameConst.UIFormID.GamePlayingClockUIID);
+                break;
+            case GameState.Pause:
+                UIHelper.OpenUIFormByDataID(GameConst.UIFormID.GamePauseUIID);
+                break;
+            case GameState.GameOver:
+                UIHelper.OpenUIFormByDataID(GameConst.UIFormID.GameOverID);
+                break;
+        }
     }
 }

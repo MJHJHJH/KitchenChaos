@@ -4,3 +4,9 @@
 #		策划备注	资源路径	所在资源组
 	10001	主菜单场景	Assets/Scenes/Base/Scenes/MainMenu.unity	Base
 	10002	Level-1	Assets/Scenes/Level1/Scenes/GameMainScene.unity	Level1
+	10003	DeliveryManagerUI	Assets/_Assets/UI/Level1/DeliveryManagerUI.prefab	Level1
+	10004	GameOver	Assets/_Assets/UI/Level1/GameOver.prefab	Level1
+	10005	GamePauseUI	Assets/_Assets/UI/Level1/GamePauseUI.prefab	Level1
+	10006	GamePlayingClockUI	Assets/_Assets/UI/Level1/GamePlayingClockUI.prefab	Level1
+	10007	WaitClockUI	Assets/_Assets/UI/Level1/WaitClockUI.prefab	Level1
+	10008	MenuMainUI	Assets/_Assets/UI/Base/MenuMainUI.prefab	Base

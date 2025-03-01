@@ -39,6 +39,7 @@ public class ProcedurePreload : ProcedureBase
         {
             return;
         }
+
         ChangeState<ProcedureChangeScene>(procedureOwner);
     }
 
@@ -78,6 +79,7 @@ public class ProcedurePreload : ProcedureBase
         if (AlreadyLoadDataTableNum == DataTableAllName.Instance.allNameList.Count)
         {
             isPreloadComplete = true;
+            LoadAllUIGroup();
         }
     }
 
@@ -93,7 +95,18 @@ public class ProcedurePreload : ProcedureBase
         if (AlreadyLoadDataTableNum == DataTableAllName.Instance.allNameList.Count)
         {
             isPreloadComplete = true;
+            LoadAllUIGroup();
         }
     }
 
+    //TODO - 实现的不够优雅 - 引入UniTask再改改吧
+    //加载UI资源组
+    private void LoadAllUIGroup()
+    {
+        DRUIGroup[] dRUIGroups = DataHelper.GetAllDataByType<DRUIGroup>();
+        foreach (DRUIGroup dRUIGroup in dRUIGroups)
+        {
+            GameEntry.UI.AddUIGroup(dRUIGroup.Name, dRUIGroup.Depth);
+        }
+    }
 }

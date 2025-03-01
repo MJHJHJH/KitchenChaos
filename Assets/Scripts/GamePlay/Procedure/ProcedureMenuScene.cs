@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using GameFramework;
 using GameFramework.Event;
 using GameFramework.Procedure;
 using GameFramework.Resource;
@@ -17,6 +19,7 @@ public class ProcedureMenuScene : ProcedureBase
         base.OnInit(procedureOwner);
     }
 
+    private List<int> openUIIDs = new List<int>();
     protected override void OnEnter(ProcedureOwner procedureOwner)
     {
         this.procedureOwner = procedureOwner;
@@ -24,6 +27,16 @@ public class ProcedureMenuScene : ProcedureBase
         base.OnEnter(procedureOwner);
         Log.Info("ProcedureMenuScene");
         GameEntry.Event.Subscribe(ChangeSceneEventArgs.EventId, ChangeScene);
+
+        //测试
+        int serialId = UIHelper.OpenUIFormByDataID(GameConst.UIFormID.MainMenuUIID);
+        openUIIDs.Add(serialId);
+    }
+
+    private void OpenSuccessUI(object sender, GameEventArgs e)
+    {
+        OpenUIFormSuccessEventArgs ne = (OpenUIFormSuccessEventArgs)e;
+        Log.Info($"name:{ne.UIForm.name} - 打开成功");
     }
 
     protected override void OnUpdate(ProcedureOwner procedureOwner,
@@ -40,6 +53,12 @@ public class ProcedureMenuScene : ProcedureBase
     protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
     {
         GameEntry.Event.Unsubscribe(ChangeSceneEventArgs.EventId, ChangeScene);
+        foreach (var id in openUIIDs)
+        {
+            GameEntry.UI.CloseUIForm(id);
+        }
+        openUIIDs.Clear();
+
         base.OnLeave(procedureOwner, isShutdown);
     }
 
@@ -59,5 +78,5 @@ public class ProcedureMenuScene : ProcedureBase
         isChangeScene = true;
     }
 
-   
+
 }

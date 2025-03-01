@@ -7,6 +7,10 @@ public class DeliveryManager : MonoBehaviour
 {
     [SerializeField] private List<RecipeSO> allRecipeSOList;
     private List<RecipeSO> waitingRecipeSOList = new List<RecipeSO>();
+    public List<RecipeSO> GetWaitingRecipeSOList()
+    {
+        return waitingRecipeSOList;
+    }
 
     private static DeliveryManager _Instance = null;
     public static DeliveryManager Instance

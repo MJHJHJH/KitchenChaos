@@ -8,4 +8,10 @@ public static class DataHelper
         var data = TData.GetDataRow(x => x.Id == Id);
         return data;
     }
+
+    public static T[] GetAllDataByType<T>() where T : GameFramework.DataTable.IDataRow
+    {
+        GameFramework.DataTable.IDataTable<T> TData = GameEntry.DataTable.GetDataTable<T>();
+        return TData.GetAllDataRows();
+    }
 }

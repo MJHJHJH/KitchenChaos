@@ -115,7 +115,6 @@ public class ProcedureChangeScene : ProcedureBase
     //判断场景是否加载了，如果没有加载的话要去加载对应的场景
     private void LoadSceneAsset()
     {
-        //判断一个资源组是否加载了 - 硬编码+1 需要配表
         IResourceGroup iResourceGroup = GameEntry.Resource.GetResourceGroup(sceneResourceGroup);
         if (!iResourceGroup.Ready)
         {

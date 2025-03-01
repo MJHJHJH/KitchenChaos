@@ -6,6 +6,8 @@ public class DataTableAllName
     {
 		allNameList.Add("Asset");
 		allNameList.Add("Scene");
+		allNameList.Add("UIForm");
+		allNameList.Add("UIGroup");
 
     }
 

@@ -1,0 +1,10 @@
+#	界面配置表						
+#	Id		Name	UIGroupId	AssetId	AllowMultiInstance	PauseCoveredUIForm
+#	int		string	int	int	bool	bool
+#	界面编号	策划备注	界面名字	界面组Id	资源Id	是否允许多个界面实例	是否暂停被其覆盖的界面
+	1001	DeliveryManagerUI	DeliveryManagerUI	1002	10003	FALSE	TRUE
+	1002	GameOver	GameOver	1002	10004	FALSE	TRUE
+	1003	GamePauseUI	GamePauseUI	1002	10005	FALSE	TRUE
+	1004	GamePlayingClockUI	GamePlayingClockUI	1003	10006	FALSE	TRUE
+	1005	WaitClockUI	WaitClockUI	1002	10007	FALSE	TRUE
+	1006	MenuMainUI	MenuMainUI	1001	10008	FALSE	TRUE

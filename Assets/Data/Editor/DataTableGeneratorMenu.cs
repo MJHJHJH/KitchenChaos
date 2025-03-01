@@ -7,9 +7,10 @@ namespace GameFramework.Editor.DataTableTools
 {
     public sealed class DataTableGeneratorMenu
     {
-        [MenuItem("Tools/UI/Generate DataTables", false, 1)]
+        [MenuItem("Tools/Data/Generate DataTables", false, 1)]
         private static void GenerateDataTables()
         {
+            DelectDataTables();
             CheckFilePath();
             string[] allDataTableNames = GetDataTableNames();
             foreach (string dataTableName in allDataTableNames)
@@ -25,6 +26,20 @@ namespace GameFramework.Editor.DataTableTools
             }
             GenAllDataTableNamesConfigs(allDataTableNames);
             AssetDatabase.Refresh();
+        }
+
+        private static void DelectDataTables()
+        {
+            if (Directory.Exists(DataTableConst.CSharpCodePath))
+            {
+                Directory.Delete(DataTableConst.CSharpCodePath, true);
+            }
+
+            if (Directory.Exists(DataTableConst.DataTableByte_Path))
+            {
+                Directory.Delete(DataTableConst.DataTableByte_Path, true);
+            }
+
         }
 
         private static void CheckFilePath()
