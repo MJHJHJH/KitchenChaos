@@ -63,3 +63,23 @@ MonoBehaviour:
     packed: 0
     filterType: 2
     searchPatterns: '*.*'
+  - valid: 1
+    name: UIBase
+    variant: 
+    fileSystem: Base
+    groups: Base
+    assetsDirectoryPath: Assets/_Assets/UI/Base
+    loadType: 0
+    packed: 0
+    filterType: 0
+    searchPatterns: '*.*'
+  - valid: 1
+    name: UILevel1
+    variant: 
+    fileSystem: Resources
+    groups: Level1
+    assetsDirectoryPath: Assets/_Assets/UI/Level1
+    loadType: 0
+    packed: 0
+    filterType: 0
+    searchPatterns: '*.*'

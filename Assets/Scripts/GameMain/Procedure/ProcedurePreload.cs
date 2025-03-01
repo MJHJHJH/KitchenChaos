@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using GameFramework;
 using GameFramework.Event;
 using GameFramework.Procedure;
@@ -14,6 +15,7 @@ using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedure
 public class ProcedurePreload : ProcedureBase
 {
     private bool isPreloadComplete = false;
+    private ProcedureOwner CurrentProcedureOwner;
     protected override void OnInit(ProcedureOwner procedureOwner)
     {
         base.OnInit(procedureOwner);
@@ -21,12 +23,14 @@ public class ProcedurePreload : ProcedureBase
 
     protected override void OnEnter(ProcedureOwner procedureOwner)
     {
-        isPreloadComplete = false;
+        CurrentProcedureOwner = procedureOwner;
+        // isPreloadComplete = false;
         //设置场景相关变量
         procedureOwner.SetData<VarInt32>(Constant.ProcedureChangeSceneID, SceneIDS.MainMenuSceneID);
         GameEntry.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
         GameEntry.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-        LoadAllTableData();
+        // LoadAllTableData();
+        LoadAll();
         base.OnEnter(procedureOwner);
 
     }
@@ -35,12 +39,12 @@ public class ProcedurePreload : ProcedureBase
      float elapseSeconds, float realElapseSeconds)
     {
         base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-        if (!isPreloadComplete)
-        {
-            return;
-        }
+        // if (!isPreloadComplete)
+        // {
+        //     return;
+        // }
 
-        ChangeState<ProcedureChangeScene>(procedureOwner);
+        // ChangeState<ProcedureChangeScene>(procedureOwner);
     }
 
     protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
@@ -78,8 +82,9 @@ public class ProcedurePreload : ProcedureBase
         //尝试打印数据表数据 
         if (AlreadyLoadDataTableNum == DataTableAllName.Instance.allNameList.Count)
         {
-            isPreloadComplete = true;
-            LoadAllUIGroup();
+            // isPreloadComplete = true;
+            // LoadAllUIGroup();
+            uniTaskCompletionSource_LoadDataTable.TrySetResult();
         }
     }
 
@@ -94,8 +99,9 @@ public class ProcedurePreload : ProcedureBase
         Log.Info($"{ne.DataTableAssetName} - Load Fail");
         if (AlreadyLoadDataTableNum == DataTableAllName.Instance.allNameList.Count)
         {
-            isPreloadComplete = true;
-            LoadAllUIGroup();
+            // isPreloadComplete = true;
+            // LoadAllUIGroup();
+            uniTaskCompletionSource_LoadDataTable.TrySetResult();
         }
     }
 
@@ -108,5 +114,15 @@ public class ProcedurePreload : ProcedureBase
         {
             GameEntry.UI.AddUIGroup(dRUIGroup.Name, dRUIGroup.Depth);
         }
+    }
+
+    //UniTask 异步流处理加载流程
+    UniTaskCompletionSource uniTaskCompletionSource_LoadDataTable = new UniTaskCompletionSource();
+    private async void LoadAll()
+    {
+        LoadAllTableData();
+        await uniTaskCompletionSource_LoadDataTable.Task;
+        LoadAllUIGroup();
+        ChangeState<ProcedureChangeScene>(CurrentProcedureOwner);
     }
 }
