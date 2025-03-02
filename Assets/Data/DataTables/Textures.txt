@@ -1,0 +1,15 @@
+#	资源配置表		
+#	Id		AssetID
+#	int		int
+#		策划备注	资源ID
+	1001	Bread	10009
+	1002	Cabbage	10010
+	1003	CabbageSlices	10011
+	1004	CheeseBlock	10012
+	1005	CheeseSlice	10013
+	1006	MeatPattyBurned	10014
+	1007	MeatPattyCooked	10015
+	1008	MeatPattyUncooked	10016
+	1009	Plate	10017
+	1010	Tomato	10018
+	1011	TomatoSlice	10019

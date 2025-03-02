@@ -5,7 +5,7 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2025-03-02 21:03:45.913
+// 生成时间：2025-03-02 21:03:45.925
 //------------------------------------------------------------
 
 using GameFramework;
@@ -21,7 +21,7 @@ namespace GameFramework
     /// <summary>
     /// 资源配置表。
     /// </summary>
-    public class DRAsset : DataRowBase
+    public class DRTextures : DataRowBase
     {
         private int m_Id = 0;
 
@@ -37,18 +37,9 @@ namespace GameFramework
         }
 
         /// <summary>
-        /// 获取资源路径。
+        /// 获取资源ID。
         /// </summary>
-        public string AssetPath
-        {
-            get;
-            private set;
-        }
-
-        /// <summary>
-        /// 获取所在资源组。
-        /// </summary>
-        public string ResourceGroup
+        public int AssetID
         {
             get;
             private set;
@@ -66,8 +57,7 @@ namespace GameFramework
             index++;
             m_Id = int.Parse(columnStrings[index++]);
             index++;
-            AssetPath = columnStrings[index++];
-            ResourceGroup = columnStrings[index++];
+            AssetID = int.Parse(columnStrings[index++]);
 
             GeneratePropertyArray();
             return true;
@@ -80,8 +70,7 @@ namespace GameFramework
                 using (BinaryReader binaryReader = new BinaryReader(memoryStream, Encoding.UTF8))
                 {
                     m_Id = binaryReader.Read7BitEncodedInt32();
-                    AssetPath = binaryReader.ReadString();
-                    ResourceGroup = binaryReader.ReadString();
+                    AssetID = binaryReader.Read7BitEncodedInt32();
                 }
             }
 

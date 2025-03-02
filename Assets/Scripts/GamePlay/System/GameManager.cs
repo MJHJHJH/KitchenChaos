@@ -26,8 +26,8 @@ public class GameManager : Singleton<GameManager>
     private float waitingToStartTimerMax = 1f;
     private float countdownToStartTimer = 3f;
     private float countdownToStartTimerMax = 3f;
-    private float gamePlayingTimer = 10f;
-    private float gamePlayingTimerMax = 10f;
+    private float gamePlayingTimer = 20f;
+    private float gamePlayingTimerMax = 20f;
 
     private int WaitClockUISerialId;
     // Start is called before the first frame update

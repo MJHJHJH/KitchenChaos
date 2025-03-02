@@ -10,3 +10,14 @@
 	10006	GamePlayingClockUI	Assets/_Assets/UI/Level1/GamePlayingClockUI.prefab	Level1
 	10007	WaitClockUI	Assets/_Assets/UI/Level1/WaitClockUI.prefab	Level1
 	10008	MenuMainUI	Assets/_Assets/UI/Base/MenuMainUI.prefab	Base
+	10009	Bread	Assets/_Assets/Level1/Textures/Icons/Bread.png	Level1
+	10010	Cabbage	Assets/_Assets/Level1/Textures/Icons/Cabbage.png	Level1
+	10011	CabbageSlices	Assets/_Assets/Level1/Textures/Icons/CabbageSlices.png	Level1
+	10012	CheeseBlock	Assets/_Assets/Level1/Textures/Icons/CheeseBlock.png	Level1
+	10013	CheeseSlice	Assets/_Assets/Level1/Textures/Icons/CheeseSlice.png	Level1
+	10014	MeatPattyBurned	Assets/_Assets/Level1/Textures/Icons/MeatPattyBurned.png	Level1
+	10015	MeatPattyCooked	Assets/_Assets/Level1/Textures/Icons/MeatPattyCooked.png	Level1
+	10016	MeatPattyUncooked	Assets/_Assets/Level1/Textures/Icons/MeatPattyUncooked.png	Level1
+	10017	Plate	Assets/_Assets/Level1/Textures/Icons/Plate.png	Level1
+	10018	Tomato	Assets/_Assets/Level1/Textures/Icons/Tomato.png	Level1
+	10019	TomatoSlice	Assets/_Assets/Level1/Textures/Icons/TomatoSlice.png	Level1

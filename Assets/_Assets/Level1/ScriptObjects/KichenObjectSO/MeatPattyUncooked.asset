@@ -14,10 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7955349910321434090, guid: 94e41f7dc0eec0a4bb0191ceaf0856ef, type: 3}
   sprite: {fileID: 21300000, guid: aa1bacc24dde76e47b2ec0dd4e82385b, type: 3}
-  changeSuccessPrefab: {fileID: 3812876574508226177, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
-    type: 3}
-  changeSuccessSprite: {fileID: 21300000, guid: f1f50c7ef90b19741b26f2040806cf56,
-    type: 3}
-  changeFailPrefab: {fileID: 3812876574508226177, guid: 0df961a7e3870b44f9bbce7bdf930613,
-    type: 3}
-  changeFailSprite: {fileID: 21300000, guid: 713ea9afa60dd6e4ebf6503a33e8cc99, type: 3}
+  spriteID: 1008

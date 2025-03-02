@@ -10,6 +10,6 @@ public class PlateIconsUI : MonoBehaviour
     {
         Transform tr = Instantiate(iconTemplate, transform);
         tr.gameObject.SetActive(true);
-        tr.GetComponent<IconTemplate>().SetIcon(so.sprite);
+        tr.GetComponent<IconTemplate>().SetIcon(so.spriteID);
     }
 }
